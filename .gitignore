@@ -10,15 +10,29 @@ lerna-debug.log*
 frontend/node_modules
 backend/venv
 backend/__pycache__
+node_modules
+vendor
 dist
 dist-ssr
 *.local
+
+# Environment files
+.env
+.env.*
+
+# Cache and coverage
+.cache/
+.phpunit.result.cache
+.phpunit.cache/
+coverage/
+build/
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
