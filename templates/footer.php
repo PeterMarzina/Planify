@@ -1,5 +1,5 @@
 <footer>
-        <p>© 2024 Mijn Applicatie</p>
+        <p>© 2026 Planify | Peter Marzina | Saibo Fofana | Prabhjot Singh</p>
     </footer>
 </body>
 </html>
