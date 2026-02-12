@@ -1,0 +1,34 @@
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# PHP
+vendor/
+composer.phar
+composer.lock
+
+# Environment & Configuration
+.env
+.env.local
+*.local.php
+
+# Logs
+*.log
+logs/
+
+# Cache files
+cache/
+tmp/
+temp/
+
+# Database
+*.sql.bak
+*.db
+
+# OS generated files
+Thumbs.db
+desktop.ini
