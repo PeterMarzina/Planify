@@ -9,7 +9,7 @@ $error_message = $_GET['message'] ?? 'Er is een onbekende fout opgetreden.';
         <h2>✗ Fout!</h2>
         <p><?php echo htmlspecialchars($error_message); ?></p>
         <a href="index.php">Terug naar producten</a>
-        <a href="form.html">Opnieuw proberen</a>
+        <a href="form.php">Opnieuw proberen</a>
     </div>
 </main>
 

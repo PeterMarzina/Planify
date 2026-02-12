@@ -11,7 +11,7 @@ $products = $stmt->fetchAll();
     <div class="products">
         <?php foreach ($products as $product): ?>
             <div class="product">
-                <h3><?php echo htmlspecialchars($product['name']); ?></h3>
+                <h3><?php echo $product['name']; ?></h3>
                 <p><?php echo htmlspecialchars($product['description']); ?></p>
                 <p>€<?php echo number_format($product['price'], 2); ?></p>
             </div>
