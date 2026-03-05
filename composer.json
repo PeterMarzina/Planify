@@ -1,0 +1,22 @@
+{
+    "name": "boostlab/planify",
+    "description": "Planify - Product Management System",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "monolog/monolog": "^3.0",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Planify\\": "src/"
+        },
+        "files": [
+            "app/core/functions.php"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}

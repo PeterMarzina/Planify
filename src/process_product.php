@@ -26,4 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } catch (PDOException $e) {
         header("Location: ../public/error.php?message=Database fout: " . urlencode($e->getMessage()));
         exit();
-} } ?>
+    }
+}
+?>

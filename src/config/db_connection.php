@@ -1,14 +1,17 @@
 <?php
-// Laad .env bestand indien aanwezig
-$envFile = __DIR__ . '/../../.env';
-if (file_exists($envFile)) {
-    $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    foreach ($lines as $line) {
-        if (strpos($line, '#') === 0) continue;
-        list($key, $value) = explode('=', $line, 2);
-        $_ENV[trim($key)] = trim($value);
-    }
-}
+// Laad Composer autoloader
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+// Laad .env bestand met Dotenv
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../..');
+$dotenv->load();
+
+// Monolog: Logging instellen
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+$log = new Logger('planify');
+$log->pushHandler(new StreamHandler(__DIR__ . '/../../logs/app.log', Logger::WARNING));
 
 // Database configuratie
 $dbHost = $_ENV['DB_HOST'] ?? 'localhost';
@@ -26,6 +29,8 @@ try {
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         ]
     );
+    $log->alert("verbinding gelukt: ");
 } catch (PDOException $e) {
+    $log->error("Verbindingsfout: " . $e->getMessage());
     die("Verbindingsfout: " . $e->getMessage());
 }
