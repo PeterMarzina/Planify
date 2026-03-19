@@ -1,0 +1,12 @@
+/*
+  Tailwind entry point in the src directory.
+  Run the build command to generate the final stylesheet in public/css/style.css:
+
+    npx tailwindcss -i ./src/css/input.css -o ./public/css/style.css --minify
+
+  You can add your own custom directives or utilities below.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
