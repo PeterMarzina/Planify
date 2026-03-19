@@ -44,6 +44,26 @@ class TaskController
     }
 
     // =====================
+    // READ (geschiedenis)
+    // =====================
+    public function getTaskHistory()
+    {
+
+        global $pdo;
+
+        // Simpel: haal alle taken op, nieuwste eerst.
+        $sql = "SELECT taak.*, User.naam, User.achternaam
+                FROM Taak taak
+                LEFT JOIN User ON taak.assignee = User.id
+                ORDER BY taak.id DESC";
+
+        $stmt = $pdo->query($sql);
+
+        // Geeft een array terug met alle taken voor history.php.
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // =====================
     // READ (1 taak)
     // =====================
     public function getTaskById($id)

@@ -39,6 +39,6 @@
                 <h1 class="text-2xl font-extrabold tracking-tight text-slate-900">Planify</h1>
                 <p class="text-sm text-slate-600">Beheer je taken op een rustige, duidelijke manier</p>
             </div>
-            <span class="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700">Task Board</span>
+            <a href="history.php" class="rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-700 transition hover:bg-blue-100">Taken geschiedenis</a>
         </div>
     </header>
